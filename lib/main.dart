@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:boxgame/box-game.dart';
 
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   Util flameUtil = Util();
   await flameUtil.fullScreen();
