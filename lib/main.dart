@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flame/util.dart';
 import 'package:flutter/services.dart';
 import 'package:boxgame/box-game.dart';
+import 'package:flutter/gestures.dart';
 
 void main() async {
 
@@ -11,5 +12,9 @@ void main() async {
   await flameUtil.setOrientation(DeviceOrientation.portraitUp);
 
   BoxGame game = BoxGame();
+  TapGestureRecognizer tapper = TapGestureRecognizer();
+  tapper.onTapDown = game.onTapDown;
+  flameUtil.addGestureRecognizer(tapper);
+
   runApp(game.widget);
 }
